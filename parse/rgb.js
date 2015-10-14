@@ -4,7 +4,15 @@ var clamp = require("../util/clamp");
 // TODO: handle percentage values for rgb?
 
 function parseRgbComponent(component, i) {
-  return (i < 3) ? clamp(parseInt(component, 10), 0, 255) : clamp(parseFloat(component), 0, 1);
+  if (i < 3) {
+    if (component.indexOf('%') != -1) {
+      return component = Math.round(255 * clamp(parseInt(component, 10), 0, 100)/100);
+    } else {
+      return clamp(parseInt(component, 10), 0, 255);
+    }
+  } else {
+    return clamp(parseFloat(component), 0, 1);
+  } 
 }
 
 function rgb(color) {

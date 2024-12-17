@@ -15,4 +15,4 @@ function rgb2xyz(rgb) {
   return [x * 100, y *100, z * 100];
 }
 
-module.exports = rgb2xyz;
+export default rgb2xyz;

@@ -19,4 +19,4 @@ function xyz2lab(xyz) {
   return [l, a, b];
 }
 
-module.exports = xyz2lab;
+export default xyz2lab;

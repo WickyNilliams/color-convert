@@ -1,7 +1,7 @@
-var hsl = require("./hsl");
-var hex = require("./hex");
-var rgb = require("./rgb");
-var hsl2rgb = require("../convert/hsl2rgb");
+import hsl from "./hsl.js";
+import hex from "./hex.js";
+import rgb from "./rgb.js";
+import hsl2rgb from "../convert/hsl2rgb.js";
 
 function hsl2rgbParse(color) {
   var h = hsl(color);
@@ -33,4 +33,4 @@ parse.rgb = rgb;
 parse.hsl = hsl;
 parse.hex = hex;
 
-module.exports = parse;
+export default parse;

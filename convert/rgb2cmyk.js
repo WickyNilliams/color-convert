@@ -11,4 +11,4 @@ function rgb2cmyk(rgb) {
   return [c * 100, m * 100, y * 100, k * 100];
 }
 
-module.exports = rgb2cmyk;
+export default rgb2cmyk;

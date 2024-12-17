@@ -9,10 +9,12 @@
     "url": "http://github.com/WickyNilliams/pure-color.git"
   },
   "license": "MIT",
-  "devDependencies": {},
+  "devDependencies": {
+    "tap-spec": "^5.0.0"
+  },
   "scripts": {
     "postversion": "git push origin master --tags && npm publish",
-    "test": "node test/convert.js && node test/parse.js"
+    "test": "node test/convert.js | tap-spec && node test/parse.js | tap-spec"
   },
   "keywords": [
     "color",
@@ -24,5 +26,6 @@
     "hsl",
     "hsv",
     "parse"
-  ]
+  ],
+  "type": "module"
 }

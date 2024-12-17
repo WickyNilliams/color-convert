@@ -1,5 +1,5 @@
-var extractComponents = require("./extractComponents");
-var clamp = require("../util/clamp");
+import extractComponents from "./extractComponents.js";
+import clamp from "../util/clamp.js";
 
 function parseRgbComponent(component, i) {
   if (i < 3) {
@@ -17,4 +17,4 @@ function rgb(color) {
   return extractComponents(color).map(parseRgbComponent);
 }
 
-module.exports = rgb;
+export default rgb;

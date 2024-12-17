@@ -26,4 +26,4 @@ function hsv2rgb(hsv) {
   }
 }
 
-module.exports = hsv2rgb;
+export default hsv2rgb;

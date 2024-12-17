@@ -1,6 +1,7 @@
-var convert = require("../convert");
-var assert = require("assert");
-var fixtures = require("./fixtures/convert");
+import convert from "../convert/index.js";
+import assert from "assert";
+import fixtures from "./fixtures/convert.js";
+import { test } from 'node:test';
 
 function round(arr) {
   return arr.map(Math.round)
@@ -14,14 +15,7 @@ function equal(actual, expected) {
   }
 }
 
-function test(from, to, colors) {
-  var conversion = convert[from][to];
-  colors.forEach(function(color) {
-    equal(conversion(color[0]), color[1]);
-  });
-}
-
-// dyanmically create tests for hwb...
+// dynamically create tests for hwb...
 for(var angle = 0; angle <= 360; angle ++) {
   // all extreme value should give black, white or grey
   fixtures.hwb.rgb.push([[angle, 0, 100], [0, 0, 0]]);
@@ -32,7 +26,11 @@ for(var angle = 0; angle <= 360; angle ++) {
 // run tests
 for (var from in fixtures) {
   for (var to in fixtures[from]) {
-    console.log("converting: " + from + "2" + to);
-    test(from, to, fixtures[from][to]);
+    test(`converting: ${from}2${to}`, () => {
+      var conversion = convert[from][to];
+      fixtures[from][to].forEach(function(color) {
+        equal(conversion(color[0]), color[1]);
+      });
+    });
   }
 }

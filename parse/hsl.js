@@ -1,5 +1,5 @@
-var extractComponents = require("./extractComponents");
-var clamp = require("../util/clamp");
+import extractComponents from "./extractComponents.js";
+import clamp from "../util/clamp.js";
 
 function parseHslComponent(component, i) {
   component = parseFloat(component);
@@ -19,4 +19,4 @@ function hsl(color) {
   return extractComponents(color).map(parseHslComponent);
 }
 
-module.exports = hsl;
+export default hsl;

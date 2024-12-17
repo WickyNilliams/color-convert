@@ -1,12 +1,11 @@
-// http://dev.w3.org/csswg/css-color/#hwb-to-rgb
 function hwb2rgb(hwb) {
   var h = hwb[0] / 360,
       wh = hwb[1] / 100,
       bl = hwb[2] / 100,
       ratio = wh + bl,
-      i, v, f, n;
+      i, v, f, n,
+      r, g, b;
 
-  // wh + bl cant be > 1
   if (ratio > 1) {
     wh /= ratio;
     bl /= ratio;
@@ -18,7 +17,7 @@ function hwb2rgb(hwb) {
   if ((i & 0x01) != 0) {
     f = 1 - f;
   }
-  n = wh + f * (v - wh);  // linear interpolation
+  n = wh + f * (v - wh);
 
   switch (i) {
     default:
@@ -34,4 +33,4 @@ function hwb2rgb(hwb) {
   return [r * 255, g * 255, b * 255];
 }
 
-module.exports = hwb2rgb;
+export default hwb2rgb;

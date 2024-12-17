@@ -1,21 +1,24 @@
-var assert = require("assert");
-var fixtures = require("./fixtures/parse");
+import assert from "assert";
+import fixtures from "./fixtures/parse.js";
 
-var parsers = {
-  rgb   : require("../parse/rgb"),
-  hex   : require("../parse/hex"),
-  hsl   : require("../parse/hsl"),
-  parse : require("../parse")
+import rgb from "../parse/rgb.js";
+import hex from "../parse/hex.js";
+import hsl from "../parse/hsl.js";
+import parse from "../parse/index.js";
+import { test } from 'node:test';
+
+const parsers = {
+  rgb,
+  hex,
+  hsl,
+  parse
 };
 
-function test(from, colors) {
-  var parser = parsers[from];
-  colors.forEach(function(color) {
-    assert.deepEqual(parser(color[0]), color[1]);
+for (const space in parsers) {
+  test(`parsing: ${space}`, () => {
+    const parser = parsers[space];
+    fixtures[space].forEach(function(color) {
+      assert.deepEqual(parser(color[0]), color[1]);
+    });
   });
-}
-
-for(var space in parsers) {
-  console.log("parsing: " + space);
-  test(space, fixtures[space]);
 }

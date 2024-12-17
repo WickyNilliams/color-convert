@@ -31,4 +31,4 @@ function rgb2hsv(rgb) {
   return [h, s, v];
 }
 
-module.exports = rgb2hsv;
+export default rgb2hsv;

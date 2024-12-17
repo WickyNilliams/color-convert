@@ -1,4 +1,4 @@
-var clamp = require("../util/clamp");
+import clamp from "../util/clamp.js";
 
 function componentToHex(c) {
   var value = Math.round(clamp(c, 0, 255));
@@ -13,4 +13,4 @@ function rgb2hex(rgb) {
   return "#" + componentToHex(rgb[0]) + componentToHex(rgb[1]) + componentToHex(rgb[2]) + alpha;
 }
 
-module.exports = rgb2hex;
+export default rgb2hex;

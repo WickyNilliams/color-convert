@@ -4,4 +4,4 @@ function compose(a, b) {
   };
 }
 
-module.exports = compose;
+export default compose;

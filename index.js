@@ -1,4 +1,7 @@
-module.exports = {
-  parse : require("./parse"),
-  convert : require("./convert")
+import parse from "./parse/index.js";
+import convert from "./convert/index.js";
+
+export default {
+  parse,
+  convert
 };

@@ -17,4 +17,4 @@ function hsl2hsv(hsl) {
   return [h, sv * 100, v * 100];
 }
 
-module.exports = hsl2hsv;
+export default hsl2hsv;

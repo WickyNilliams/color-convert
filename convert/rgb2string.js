@@ -12,4 +12,4 @@ function rgb2string(rgb) {
   return scheme + "(" + rgb.join(",") + ")";
 }
 
-module.exports = rgb2string;
+export default rgb2string;

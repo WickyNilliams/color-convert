@@ -12,4 +12,4 @@ function hsl2string(hsl) {
   return scheme + "(" + hsl.join(",") + ")";
 }
 
-module.exports = hsl2string;
+export default hsl2string;

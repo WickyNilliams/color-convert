@@ -10,4 +10,4 @@ function lch2lab(lch) {
   return [l, a, b];
 }
 
-module.exports = lch2lab;
+export default lch2lab;

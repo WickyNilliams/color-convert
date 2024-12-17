@@ -1,0 +1,5 @@
+{
+  "tasks": {
+    "test": "npm test"
+  }
+}

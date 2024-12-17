@@ -1,4 +1,4 @@
-var rgb2xyz = require("./rgb2xyz");
+import rgb2xyz from "./rgb2xyz.js";
 
 function rgb2lab(rgb) {
   var xyz = rgb2xyz(rgb),
@@ -22,4 +22,4 @@ function rgb2lab(rgb) {
   return [l, a, b];
 }
 
-module.exports = rgb2lab;
+export default rgb2lab;

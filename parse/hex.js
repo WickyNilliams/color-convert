@@ -30,4 +30,4 @@ function hex(hex) {
   return rgb;
 }
 
-module.exports = hex;
+export default hex;

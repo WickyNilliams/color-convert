@@ -33,4 +33,4 @@ function rgb2hsl(rgb) {
   return [h, s * 100, l * 100];
 }
 
-module.exports = rgb2hsl;
+export default rgb2hsl;
